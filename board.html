@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board</title>
+    <link rel="icon" type="image/svg" href="assets/img/favicon.svg">
+    <link rel="stylesheet" href="/css/board.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <script src="js/templates.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/arrays.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="/js/contacts.js"></script>
+    <script src="js/task-overlay-detail.js"></script>
+    <script src="js/task-overlay-edit.js"></script>
+    <script src="js/task-overlay-add.js"></script>
+    <script src="/js/filter-tasks.js"></script>
+    <script src="/js/board.js"></script>
+</head>
+<body onload="init()">
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu-container">
+        
+        
+
+        <a href="summary.html">
+            <img class="mobile-icons" src="assets/img/mobile-summary.png" alt="Summary">
+            <p class="mobile-text">Summary</p>
+        </a>
+        <a href="board.html">
+            <img class="mobile-icons" src="assets/img/mobile-board.png" alt="Board">
+            <p class="mobile-text">Board</p>
+        </a>
+        <a href="add-task.html">
+            <img class="mobile-icons" src="assets/img/mobile-addtask.png" alt="Add Task">
+            <p class="mobile-text">Add Task</p>
+        </a>
+        <a href="contacts.html">
+            <img class="mobile-icons" src="assets/img/mobile-contacts.png" alt="Contact">
+            <p class="mobile-text">Contact</p>
+        </a>
+    </div>
+    <img src="assets/img/logo_mobile.png" alt="Mobile Logo" id="mobile-logo"> 
+
+   
+
+    <div class="message-overlay" id="message" style="display: none"></div>
+   <!-- Main -->
+        <div id="board">
+            <div id="board-header">
+                <div id="board-header-top">
+                        <h1>Board</h1>
+                    <div id="board-header-right">              
+                        <input class="input" id="search" onkeyup="filterTasks()" type="text" placeholder="Find Task">
+                        <input id="add-task-plus" class="mobile-button" type="button" onclick="location.href='/add-task.html';" value="Add task +" />
+                    </div>
+                </div>
+            </div>
+            <div id="search-section"></div>
+            <div class="board-section" id="board-section">
+                <div class="todos-section">
+                  <div class="todos-header">
+                    <p>To Do</p>
+                    <button onclick="openAddTaskCard('open')" onmouseover="hover('plus', '1')" onmouseout="unhover('plus', '1')"><img id="plus1-img" src="assets/img/plus_icon.png" alt=""></button>
+                  </div>
+                  <div ondrop="moveTo('open')" ondragover="allowDrop(event)" class="drag-here-container" style="display: none;"><span>drag here to change status</span></div>
+                  <div id="open-empty" class="todos-container-empty" style="display: none;"><span>No tasks to do</span></div>
+                  <div id="open" class="todos-container" ondragend="hideDragHereContainer()"></div>
+                </div>
+
+                <div class="todos-section">
+                  <div class="todos-header">
+                    <p>In progress</p>
+                    <button onclick="openAddTaskCard('in-progress')" onmouseover="hover('plus', '2')" onmouseout="unhover('plus', '2')"><img id="plus2-img" src="assets/img/plus_icon.png" alt=""></button>
+                  </div>
+                  <div ondrop="moveTo('in-progress')" ondragover="allowDrop(event)" class="drag-here-container" style="display: none;"><span>drag here to change status</span></div>
+                  <div id="in-progress-empty" class="todos-container-empty" style="display: none;"><span>No tasks to do</span></div>
+                  <div id="in-progress" class="todos-container" ondragend="hideDragHereContainer()"></div>
+                </div>
+
+                <div class="todos-section">
+                  <div class="todos-header">
+                    <p>Await feedback</p>
+                    <button onclick="openAddTaskCard('await-feedback')" onmouseover="hover('plus', '3')" onmouseout="unhover('plus', '3')"><img id="plus3-img" src="assets/img/plus_icon.png" alt=""></button>
+                </div>
+                  <div ondrop="moveTo('await-feedback')" ondragover="allowDrop(event)" class="drag-here-container" style="display: none;"><span>drag here to change status</span></div>
+                  <div id="await-feedback-empty" class="todos-container-empty" style="display: none;"><span>No tasks to do</span></div>
+                  <div id="await-feedback" class="todos-container" ondragend="hideDragHereContainer()"></div>
+                </div>
+            
+                <div class="todos-section">
+                  <div class="todos-header">
+                    <p>Done</p>
+          
+                  </div>
+                  <div ondrop="moveTo('done')" ondragover="allowDrop(event)" class="drag-here-container" style="display: none;"><span>drag here to change status</span></div>
+                  <div id="done-empty" class="todos-container-empty" style="display: none;"><span>No tasks to do</span></div>
+                  <div id="done" class="todos-container" ondragend="hideDragHereContainer()"></div></div>
+                </div>
+            </div>
+
+    <div id="overlay" style="display: none" onclick="closeDetailCard()"></div>
+    
+    <div id="add-task-overlay" style="display: none" onclick="closeAddTaskCard()">
+
+      <div class="message-overlay" id="message" style="display: none"></div>
+      
+        <div id="add-task-container" onclick="doNotClose(event)">
+          
+          <div id="add-task-overlay-header">
+            <h1 id="add-task-headline">Add Task</h1>
+            <button type="button" id="close-add-task-button" onclick="closeAddTaskCard()" class="close-button"><img  src="assets/img/close_icon.png" alt=""></button>
+          </div>
+
+          <form id="add-task-form" onsubmit="addNewTask(); return false"> <!-- TODO: HTML 5 Form Validation? -->
+            <div id="input-container-tasks">
+
+              <div id="add-task-overlay-left">
+                
+                <div id="add-task-title-container">
+                    <div>
+                      <span id="add-task-title-headline" class="add-task-form-title">Title</span><span class="add-task-form-suffix">*</span>
+                    </div>
+                    <input id="add-task-title-input" class="add-task-form-input" required type="text" placeholder="Enter a title">
+                </div> 
+
+                <div id="add-task-description-container">
+                  <span id="add-task-description-headline" class="add-task-form-title">Description</span>
+                  <textarea id="add-task-description-input" class="add-task-form-input" rows="5" cols="40"></textarea>
+                </div>
+
+                <div id="add-task-assigned-to-container">
+                  <span class="add-task-form-title">Assigned to</span>
+                  <div id="contacts-dropdown" onclick="showDropdownContactsAddOverlay()">
+                    <span>Select contacts to assign</span>
+                    <img src="assets/img/arrow_drop_down.png" alt="">
+                  </div>
+                  <ul style="display: none;" id="add-assigned-editors" class="assigned-editors"></ul>
+                  <div id="background-overlay" onclick="hideDropdownContactsAdd()"></div>
+                  <div style="display: flex; flex-direction: row; align-items: center;">              
+                    <div id="show-assigned-editors-container"></div>
+                    <div style="display: none;" id="tooMuchEditors" class="mini-logo-dummy-add-task-overlay"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="task-splitter"></div>
+
+              <div id="add-task-overlay-right">
+                
+                
+                <div id="add-task-date-container">
+                  <div>
+                    <span id="add-task-date-headline" class="add-task-form-title">Due date</span><span class="add-task-form-suffix">*</span>
+                  </div>
+                    <input id="add-task-date-input"  class="add-task-form-input" required type="date"> <!-- TODO: add icon (replace default icon) -->
+                  
+                </div>
+                  
+                <div id="add-task-prio-container">
+                  <span id="add-task-prio-headline" class="add-task-form-title">Prio</span>
+                  <div id="add-task-form-btn-container">
+                    <button type="button" id="urgent" onclick="setNewTaskPrio('urgent', '#FF3D00'); doNotClose(event)" class="add-task-form-btn">
+                      <span id="urgent-text-add" class="add-task-form-btn-text">Urgent</span>
+                      <img id="urgent-img-add" src="assets/img/prio_urgent_icon.png" alt="" />
+                    </button>
+                    <button  type="button" id="medium" style="background-color: #FFA800" onclick="setNewTaskPrio('medium', '#FFA800'); doNotClose(event)" class="add-task-form-btn">
+                      <span id="medium-text-add" class="add-task-form-btn-text" style="color: white">Medium</span>
+                      <img id="medium-img-add" src="assets/img/prio_medium_white_icon.png" alt="" />
+                    </button>
+                    <button  type="button" id="low" onclick="setNewTaskPrio('low', '#7AE229'); doNotClose(event)" class="add-task-form-btn">
+                      <span id="low-text-add" class="add-task-form-btn-text">Low</span>
+                      <img id="low-img-add" src="assets/img/prio_low_icon.png" alt="" />
+                    </button>
+                  </div>
+                </div>
+
+                <div id="add-task-category-container">
+                  <div>
+                    <span id="add-task-category-headline" class="add-task-form-title">Category</span><span class="add-task-form-suffix">*</span>
+                  </div>
+                  <select required id="add-new-task-category" class="add-task-form-dropdown"><!-- TODO: add logic (pre-created categories?!) -->
+                    <option value="" disabled selected>Select task category</option>
+                    <option value="Technical Task">Technical Task</option>
+                    <option value="User Story">User Story</option>
+                  </select>
+                </div>
+                
+                <div id="add-task-sub-container">
+                  <span class="add-task-form-title">Subtasks</span>
+                  <div class="add-task-subtask-input-container">
+                    <input id="add-task-subtask-input" class="add-task-form-input" type="text" placeholder="Add new subtask" onkeydown="checkForEnter(event)" onclick="activateCheckCancelButtons()"/>
+                    <div id="add-task-active-subtask-icon-box" class="d-none">
+                      <img src="assets/img/subtask_cancel_icon.png" alt="Cancel" onclick="clearSubtaskInput()" />
+                      <img src="assets/img/subtask_divider.png" alt="Divider" />
+                      <img src="assets/img/subtask_check_icon.png" alt="Check" onclick="addSubtask()" />
+                    </div>
+                    <div id="add-task-create-subtask-icon-box">
+                      <img id="add-task-create-subtask-icon" src="assets/img/subtask_add_icon.png" onclick="activateCheckCancelButtons()" alt="" />
+                    </div>
+                  </div>
+                  <ul id="add-task-subtasks-container"></ul>
+                </div>
+              </div>
+            </div>
+          
+
+          <div id="add-task-overlay-footer">
+            <div id="add-task-requirement-footer">
+              <span class="add-task-form-suffix">*</span>
+              <span>This field is required</span>
+            </div>
+            <div class="add-task-buttons">
+
+
+              <button type="button" onclick="closeAddTaskCard()" id="cancel-button" class="cancel-button" onmouseover="hover('cancel', '')" onmouseout="unhover('cancel', '')">
+                <span>Cancel</span>
+                <img id="cancel-img" src="assets/img/cancel_icon.png" alt="">
+              </button>
+              <button type="submit" class="create-button"><span>Create Task</span><img src="assets/img/check_icon_white.png" alt=""></button>
+            </div>
+          
+          </div>
+        </form>
+        </div>
+    </div>
+
+  </div>
+</body>
+</html>
