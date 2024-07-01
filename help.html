@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacts</title>
+    <link rel="icon" type="image/svg" href="assets/img/favicon.svg">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="/css/contacts.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="css/privacy.css" />
+    <script src="js/templates.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/arrays.js"></script>
+    <script src="js/contacts.js"></script>
+  </head>
+  <body onload="init()">
+    <!-- Header -->
+    <div id="header-container"></div>
+
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+    <div id="mobile-menu-container">
+      <a href="summary.html">
+        <img
+          class="mobile-icons"
+          src="assets/img/mobile-summary.png"
+          alt="Summary"
+        />
+        <p class="mobile-text">Summary</p>
+      </a>
+      <a href="board.html">
+        <img
+          class="mobile-icons"
+          src="assets/img/mobile-board.png"
+          alt="Board"
+        />
+        <p class="mobile-text">Board</p>
+      </a>
+      <a href="add-task.html">
+        <img
+          class="mobile-icons"
+          src="assets/img/mobile-addtask.png"
+          alt="Add Task"
+        />
+        <p class="mobile-text">Add Task</p>
+      </a>
+      <a href="contacts.html">
+        <img
+          class="mobile-icons"
+          src="assets/img/mobile-contacts.png"
+          alt="Contact"
+        />
+        <p class="mobile-text">Contact</p>
+      </a>
+    </div>
+    <img src="assets/img/logo_mobile.png" alt="Mobile Logo" id="mobile-logo" />
+    <div class="message-overlay" id="message" style="display: none"></div>
+    <div class="pcontent-container">
+      <div class="p-content">
+        <p class="title">Hilfe</p>
+        <img
+          src="assets/img/arrow.png"
+          alt="Arrow Icon"
+          class="redirect-icon"
+          onclick="goHome()"
+        />
+
+        <h1>HILFE UND INFORMATIONEN</h1>
+
+        <p>
+          Willkommen auf der Hilfeseite für Join, deinem Leitfaden zur Nutzung
+          unseres Kanban-Projektmanagement-Tools. Hier bieten wir einen
+          Überblick darüber, was Join ist, wie es dir nützen kann und wie du es
+          verwenden kannst.
+        </p>
+
+        <h1>Was ist Join?</h1>
+        <p>
+          Join ist ein auf Kanban basierendes Projektmanagement-Tool, das von
+          einer Gruppe engagierter Studenten im Rahmen ihres
+          Webentwicklungs-Bootcamps an der Developer Akademie entworfen und
+          entwickelt wurde. <br />Kanban, ein japanischer Begriff für
+          "Anschlagtafel", ist eine äußerst effektive Methode, um Arbeit zu
+          visualisieren, die Arbeit in Bearbeitung zu begrenzen und die
+          Effizienz (oder den Fluss) zu maximieren. Join nutzt die Prinzipien
+          von Kanban, um Benutzern zu helfen, ihre Aufgaben und Projekte in
+          einer intuitiven, visuellen Oberfläche zu verwalten.
+        </p>
+
+        <p>
+          Es ist wichtig zu beachten, dass Join als Bildungsübung konzipiert ist
+          und nicht für umfangreiche geschäftliche Nutzung vorgesehen ist.
+          Obwohl wir bestrebt sind, die bestmögliche Benutzererfahrung zu
+          bieten, können wir keine durchgehende Verfügbarkeit, Zuverlässigkeit,
+          Genauigkeit oder andere Aspekte der Qualität von Join garantieren.
+        </p>
+        <h1>Wie man es verwendet</h1>
+        <p>
+          Hier ist eine schrittweise Anleitung, wie du Join verwenden kannst:
+        </p>
+
+        <h1>1. Das Board erkunden</h1>
+        <p>
+          Wenn du dich bei Join anmeldest, findest du ein Standard-Board. Dieses
+          Board repräsentiert dein Projekt und enthält vier Standardlisten: "To
+          Do", "In Bearbeitung", "Feedback erwarten" und "Fertig".
+        </p>
+
+        <h1>2. Kontakte erstellen</h1>
+        <p>
+          In Join kannst du Kontakte hinzufügen, um an deinen Projekten
+          zusammenzuarbeiten. Gehe zum Abschnitt "Kontakte", klicke auf "Neuer
+          Kontakt" und fülle die erforderlichen Informationen aus. Sobald
+          hinzugefügt, können diesen Kontakten Aufgaben zugewiesen werden, und
+          sie können mit den Aufgaben auf dem Board interagieren.
+        </p>
+
+        <h1>3. Karten hinzufügen</h1>
+        <p>
+          Nachdem du deine Kontakte hinzugefügt hast, kannst du damit beginnen,
+          Karten hinzuzufügen. Karten repräsentieren einzelne Aufgaben. Klicke
+          auf die "+"-Schaltfläche unter der entsprechenden Liste, um eine neue
+          Karte zu erstellen. Fülle die Details der Aufgabe in der Karte aus,
+          wie Aufgabenname, Beschreibung, Fälligkeitsdatum, zuständige Personen
+          usw.
+        </p>
+
+        <h1>4. Karten verschieben</h1>
+        <p>
+          Wenn die Aufgabe von einer Phase zur anderen übergeht, kannst du dies
+          auf dem Board reflektieren, indem du die Karte von einer Liste in eine
+          andere ziehst und fallen lässt.
+        </p>
+      </div>
+    </div>
+
+    <script src="./js/privacy.js"></script>
+  </body>
+</html>

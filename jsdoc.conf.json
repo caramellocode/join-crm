@@ -1,0 +1,30 @@
+{
+    "source": {
+      "include": ["."],
+      "exclude": ["node_modules"],
+      "includePattern": ".+\\.js(doc|x)?$",
+      "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "opts": {
+      "template": "node_modules/docdash",
+      "encoding": "utf8",
+      "destination": "out/",
+      "recurse": true,
+      "verbose": true
+    },
+    "templates": {
+      "cleverLinks": false,
+      "monospaceLinks": false,
+      "default": {
+        "outputSourceFiles": true
+      },
+      "systemName": "Join-785",
+      "footer": "Join-785 Footer",
+      "includeDate": true,
+      "navType": "vertical",
+      "theme": "light",
+      "linenums": true
+    }
+  }
+  
+  

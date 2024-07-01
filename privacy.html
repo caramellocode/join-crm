@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacts</title>
+    <link rel="icon" type="image/svg" href="assets/img/favicon.svg">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="/css/contacts.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="css/privacy.css" />
+    <script src="js/templates.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/arrays.js"></script>
+   
+    <link rel="stylesheet" href="./css/header.css">
+  </head>
+  <body>
+<!-- Header -->
+    <div id="header-container"></div>
+
+<!-- Sidebar -->
+    <div id="sidebar-container"></div>
+
+<!-- Mobile Menu -->
+    <div id="mobile-menu-container">
+      <a href="summary.html">
+        <img
+          class="mobile-icons"
+          src="assets/img/mobile-summary.png"
+          alt="Summary"
+        />
+        <p class="mobile-text">Summary</p>
+      </a>
+      <a href="board.html">
+        <img
+          class="mobile-icons"
+          src="assets/img/mobile-board.png"
+          alt="Board"
+        />
+        <p class="mobile-text">Board</p>
+      </a>
+      <a href="add-task.html">
+        <img
+          class="mobile-icons"
+          src="assets/img/mobile-addtask.png"
+          alt="Add Task"
+        />
+        <p class="mobile-text">Add Task</p>
+      </a>
+      <a href="contacts.html">
+        <img
+          class="mobile-icons"
+          src="assets/img/mobile-contacts.png"
+          alt="Contact"
+        />
+        <p class="mobile-text">Contact</p>
+      </a>
+    </div>
+
+    <div class="message-overlay" id="message" style="display: none"></div>
+    <img src="assets/img/arrow.png" alt="Arrow Icon" class="redirect-icon" onclick="goHome()"/>
+    <img src="assets/img/logo_mobile.png" alt="Mobile Logo" id="mobile-logo" />
+    <div class="pcontent-container">
+      <div class="p-content">
+        <p class="title">Privacy Policy</p>
+
+        <h1>1. General</h1>
+        <p>
+          This Privacy Policy describes how personal data is collected, used, processed, and protected when you use the JOIN App. By using the app, you agree to the practices described in this policy.
+        </p>
+        <h1>2. Data Collected</h1>
+        <p>
+          2.1 User Data: We may collect personal data such as your name, email address, and other relevant information you provide while using the JOIN App.
+        </p>
+
+        <h1>Automatically Collected Information</h1>
+        <p>
+          2.2 The JOIN App may automatically collect certain information about your usage, including IP address, device information, location data, and app usage statistics.
+        </p>
+
+        <h1>3. Use of Data</h1>
+        <p>
+          3.1 We use the collected data to provide, improve, and personalize the JOIN App. This includes personalizing content, providing customer support, and analyzing app usage.
+        </p>
+
+        <h1>4. Data Security</h1>
+        <p>
+          4.1 We implement reasonable security measures to ensure the security of your data and prevent unauthorized access, disclosure, alteration, or destruction.
+        </p>
+
+        <h1>5. Data Sharing with Third Parties</h1>
+        <p>
+          5.1 We do not share your personal data with third parties without your consent, unless required by law or necessary to provide and improve the JOIN App.
+        </p>
+
+        <h1>6. Changes to the Privacy Policy</h1>
+        <p>
+          6.1 This Privacy Policy may be updated from time to time. We will inform you about significant changes through the app.
+        </p>
+
+        <h1>7. Contact Information</h1>
+        <p>
+          For questions or inquiries regarding this Privacy Policy, please contact us at info@developeracademie.de.
+        </p>
+      </div>
+    </div>
+
+    <script src="./js/privacy.js"></script>
+
+  </body>
+</html>
