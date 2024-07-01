@@ -1,0 +1,260 @@
+.message-overlay {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.351);
+    z-index: 999;
+  }
+
+  .message-style {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 8px 16px;
+    height: 74px;
+    border-radius: 20px;
+    background-color: #2a3647;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    gap: 8px;
+  }
+
+/* Header Container */
+#header-container {
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+#header-headline {
+    color: rgb(74, 82, 89);
+    padding-left: 250px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#header-icons img {
+    cursor: pointer;
+}
+
+#help-icon {
+    width: 22px;
+    height: 22px;
+    padding-right: 15px;
+}
+
+#header-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 44px;
+    border-radius: 50%;
+    color: #24ADE3;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 20px;
+    background-color: white;
+}
+
+#login-icon:hover {
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.18));
+}
+
+#dropdownMenu {
+    display: none;
+    position: absolute;
+    right: 5px;
+    top: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 20px;
+    background-color: #2A3647;
+    padding: 10px;
+}
+
+#dropdownMenu a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+#dropdownMenu a:hover {
+    background-color: #ddd;
+    transition: all ease-in-out 125ms;
+}
+
+/* Sidebar Container */
+#sidebar-container {
+    width: 232px;
+    height: 100vh;
+    background-color: #2A3647;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    font-family: 'Inter', sans-serif;
+    z-index: 3;
+}
+
+/* Sidebar Logo */
+#sidebar-logo {
+    width: 100px;
+    height: 121.97px;
+    cursor: pointer;
+}
+
+/* Verbessertes Styling für Sidebar-Links */
+#sidebar-container ul {
+    padding: 0;
+    width: 100%;
+}
+
+#sidebar-container ul li {
+    list-style-type: none;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 30px;
+}
+
+#sidebar-container ul li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    padding-left: 47px; /* Abstand für Icon und Text */
+}
+
+/* Hover-Effekt für das gesamte Listenelement */
+#sidebar-container ul li:hover {
+    background-color: #091931;
+    border-radius: 5px;
+    width: 190px;
+    transition: all ease-in-out 125ms;
+}
+
+/* Sidebar Links */
+#menu-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+#menu-section img {
+    margin-right: 10px;
+}
+
+/* Sidebar Footer */
+#sidebar-footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    padding: 0 20px 80px 20px; /* Anpassung für Padding */
+}
+
+#sidebar-footer a {
+    color: #A8A8A8;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+#mobile-logo{
+    display: none;
+}
+
+/* Media Queries für responsive Anpassungen */
+@media screen and (max-width: 1050px) {
+    #header-headline, #help-icon {
+        display: none;
+    }
+
+    #sidebar-container {
+        display: none;
+    }
+
+    #mobile-menu-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        background-color: #2A3647;
+        box-shadow: 0 -4px 2px -2px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+    }
+
+    #mobile-menu-container a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        text-decoration: none;
+    }
+
+    .menu-icon, .mobile-icons {
+        width: 20px;
+        height: 20px;
+        margin-bottom: 5px;
+        
+    }
+
+    .mobile-text {
+        font-size: 14px;
+        margin-top: 0;
+    }
+
+    #mobile-logo {
+        display: block;
+        width: 32px;
+        height: 39.02px;
+        position: fixed;
+        top: 20px;
+        left: 10px;
+        z-index: 995;
+    }
+}

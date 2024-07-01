@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+    /* font-family: Arial, sans-serif; */
+}
+
+.sidebar {
+    width: 232px;
+    height: 100vh;
+    background-color:#2A3647;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    font-family: 'Inter', sans-serif;
+
+
+}
+
+#mobile-logo {
+    cursor: pointer;
+}
+
+.header {
+    width: 100%;
+    height: 96px;
+    background-color:white;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Link-Standardfarbe und Hintergrund */
+#mobile-menu-container a {
+    color: #fbfbfb;
+    text-decoration: none;
+    background-color: transparent;
+    display: inline-block;
+    padding: 10px 0;
+    /* box-sizing: border-box; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: flex-start; */
+    padding: 10px 0;
+}
+
+/* Link-Hover- und Aktivzustand */
+#mobile-menu-container a:hover, #mobile-menu-container a:active {
+    background-color: 
+    #091931; /* Dunkelblau für den Hover- und Aktivzustand */
+    color: #fff; /* Optional: Ändert die Textfarbe beim Hovern/Aktivieren in Weiß */
+}
+
+/* Optional: Ändern der Bild- und Textfarbe beim Hovern bleibt gleich, nur der Hintergrund ändert sich */
+#mobile-menu-container a:hover .mobile-icons,
+#mobile-menu-container a:active .mobile-icons {
+    filter: none; /* Keine Änderung am Bild beim Hovern/Aktivieren */
+}
+
+#mobile-menu-container a:hover .mobile-text,
+#mobile-menu-container a:active .mobile-text {
+    color: #fff; /* Optional: Beibehalten der weißen Textfarbe beim Hovern/Aktivieren */
+}
+
+.content {
+    margin-left: 200px;
+    padding: 20px;
+}
+
+.logotext {
+    color: rgb(74, 82, 89);
+    padding-left: 250px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.logo {
+    width: 100px;
+    height: 121.97px;
+}
+
+.help {
+    width: 22px;
+    height: 22px;
+    padding-right: 15px;
+    margin-bottom: 8px;
+}
+
+.kreis:hover {
+    cursor: pointer;
+}
+
+.kreis {
+    width: 40px;
+    height: 40px;
+    padding-right: 44px;
+}
+
+.help:hover {
+    cursor: pointer;
+}
+
+.menu-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 200px;
+    height: 46px;
+}
+
+.sidebar ul li {
+    list-style-type: none;
+    margin-bottom: 6px;
+    display: flex; /* Flexbox für die Listenelemente aktivieren */
+    align-items: center; /* Vertikale Zentrierung der Inhalte */
+    padding-top: 25px;
+}
+
+.icon {
+    margin-right: 10px; /* Etwas Abstand zwischen Icon und Text hinzufügen */
+    padding-top: 8px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.footer-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    width: 200px;
+    height: 46px;
+    text-decoration: none;
+    color: white;
+    padding-bottom: 80px;
+}
+
+.footertext {
+    color: #A8A8A8;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 5px;
+    top: 100%; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 20px;
+    background-color:#2A3647;
+    padding: 10px;
+}
+
+.dropdown-menu a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background-color: #ddd;
+}
+
+@media screen and (max-width: 1050px) {
+    .sidebar {
+        display: none;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    #mobile-menu-container a {
+        color: #fbfbfb;
+        text-decoration: none;
+        background-color: transparent;
+        display: inline-block;
+        width: 100%;
+        padding: 10px 0;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10px 0;
+    }
+}

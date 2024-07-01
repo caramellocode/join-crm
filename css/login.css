@@ -1,0 +1,623 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: #f6f7f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+  }
+
+  .d-none{
+    display: none;
+  }
+  
+  #logo {
+    z-index: 2000;
+    position: absolute;
+    width: 100px;
+    height: 122px;
+    top: 19px;
+    left: 27px;
+    cursor: pointer;
+  }
+  
+  .logo-animation {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: moveLogoAnimation 1s ease-in-out forwards;
+  }
+  
+  @keyframes moveLogoAnimation {
+    0% {
+      width: 274px;
+      height: 334px;
+      top: 50%;
+      left: 50%;
+    }
+    100% {
+      width: 100px;
+      height: 122px;
+      top: 80px;
+      left: 77px;
+    }
+  }
+  
+  /* 
+      top: 19px;
+      left: 27px;
+      
+      top: 80px;
+      left: 77px;
+  */
+  
+  .init-fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 1.5s ease-in-out forwards;
+  }
+  
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .fade-out {
+    opacity: 1;
+    animation: fadeOutAnimation 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes fadeOutAnimation {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  #register-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    padding-top: 67px;
+    margin-right: 5%;
+  }
+  
+  #register-container p {
+    margin-right: 10px;
+    font-family: "Inter", sans-serif;
+  }
+  
+  #register-container button {
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: #2a3647;
+    color: white;
+  }
+
+  #register-container button:hover {
+    background-color: #29abe2;
+    border: 2px solid #29abe2;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: all ease-in-out 125ms;
+  }
+  
+  #login-container {
+    width: 625px;
+    height: 493px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border-radius: 30px;
+    padding-left: 116px;
+    padding-right: 116px;
+    padding-top: 8px;
+    font-family: "Inter", sans-serif;
+  }
+  
+  #login-container h2 {
+    text-align: center;
+    font-size: 61px;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-bottom: 17px;
+  }
+  
+  .form-underline {
+    height: 3px;
+    width: 150px;
+    background-color: blue;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 25px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 400px;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 355px;
+    height: 20px;
+    margin-top: -10px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+  }
+  
+  #remember-checkbox-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #remember-checkbox-container input:hover{
+    cursor: pointer;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: all ease-in-out 125ms;
+  }
+
+  #privacy-checkbox:hover{
+    cursor: pointer;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: all ease-in-out 125ms;
+  }
+  
+  #remember-checkbox-container p {
+    margin: 0;
+    margin-left: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 12px;
+  }
+  
+  .button-group button {
+    padding: 10px 20px;
+    border-radius: 12px;
+    background-color: #2a3647;
+    color: white;
+    padding-top: 12px;
+    margin-top: 45px;
+  }
+  
+  .button-group button:hover {
+    background-color: #29abe2;
+    border: 2px solid #29abe2;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: all ease-in-out 125ms;
+  }
+  
+  .button-group button:disabled:hover {
+    background-color: #2a3647 !important;
+    border-radius: 12px !important;
+    border-color: #2a3647 !important;
+    box-shadow: none !important;
+    cursor: default !important;
+  }
+  
+  .footer {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .footer a {
+    margin: 0;
+    color: #a8a8a8;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+  }
+  
+  #submit-btn {
+    background-color: #2a3647;
+    color: white;
+    font-size: 21px;
+    font-weight: 700;
+  }
+  
+  #submit-btn:hover {
+    background-color: #29abe2;
+    border: 2px solid #29abe2;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  }
+  
+  #guest-login-btn {
+    background-color: white;
+    color: black;
+    font-size: 21px;
+    font-weight: 700;
+    border: 2px solid black;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  #guest-login-btn:hover {
+    color: #29abe2;
+    border: 2px solid #29abe2;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.8em;
+    /* margin-top: 0px; */
+    /* margin-left: 11px; */
+    margin-block-end: 0;
+    position: absolute;
+    margin-top: 183px;
+  }
+  
+  #checkbox-label {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* SIGNUP CSS */
+  
+  #signup-container {
+    opacity: 0;
+    width: 598px;
+    height: 630px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border-radius: 30px;
+    padding: 28px 116px 50px;
+    font-family: "Inter", sans-serif;
+  }
+  
+  #signup-container h2 {
+    text-align: center;
+    font-size: 61px;
+    font-weight: 700;
+    margin-bottom: 17px;
+  }
+  
+  #arrow {
+    width: 21.33px;
+    height: 20.74px;
+    position: absolute;
+    padding-top: 77px;
+    margin-left: -35px;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 670px) {
+    #arrow {
+      position: unset;
+      padding-top: unset;
+      margin-left: 8px;
+    }
+  }
+  
+  @media screen and (max-width: 670px) {
+    #logo {
+      position: absolute;
+      width: 64px;
+      height: 79.03px;
+      /* top: 50%; */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: moveLogo 3s ease-in-out forwards;
+      cursor: pointer;
+      margin-top: 45px;
+    }
+  
+    #login-container {
+      width: 396px;
+      height: 515px;
+      background-color: #ffffff;
+      box-sizing: border-box;
+      border-radius: 30px;
+      padding-left: 116px;
+      padding-right: 116px;
+      padding-top: 8px;
+      font-family: "Inter", sans-serif;
+      margin-top: -25px;
+    }
+  
+    #register-container {
+      position: absolute;
+      top: 639px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      padding-top: 95px;
+      margin-right: -14px;
+      margin-left: auto;
+    }
+  
+    #login-container h2 {
+      text-align: center;
+      font-size: 47px;
+      font-weight: 700;
+      margin-top: 44px;
+      margin-bottom: 19px;
+    }
+  
+    .input-with-icon {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 364px;
+      margin-left: -98px;
+    }
+  
+    .input-icon {
+      position: absolute;
+      left: 355px;
+      height: 20px;
+      margin-top: -10px;
+      margin-left: -75px;
+    }
+  
+    label {
+      margin-left: -75px;
+    }
+  
+    .button-group {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      border-radius: 12px;
+      align-items: center;
+      flex-direction: column;
+    }
+  
+    .button-group button {
+      padding: 10px 20px;
+      border-radius: 12px;
+      background-color: #2a3647;
+      color: white;
+      padding-top: 12px;
+      margin-top: 24px;
+      width: 180px;
+      height: 51px;
+      z-index: 9999999;
+      cursor: pointer;
+    }
+  
+    .footer {
+      position: absolute;
+      bottom: 45px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+  
+    .footer p {
+      margin: 0;
+      white-space: nowrap;
+      color: #a8a8a8;
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+    }
+  
+    #register-container button {
+      padding: 5px 10px;
+      border-radius: 8px;
+      background-color: #2a3647;
+      color: white;
+      width: 104px;
+      height: 49px;
+    }
+    #register-container span {
+      margin-right: 10px;
+      font-family: "Inter", sans-serif;
+      font-size: 20px;
+      white-space: nowrap;
+    }
+  
+    #register-container button {
+      padding: 5px 10px;
+      border-radius: 8px;
+      background-color: #2a3647;
+      color: white;
+      width: 104px;
+      min-width: 104px;
+      height: 49px;
+      white-space: nowrap;
+    }
+  
+    body {
+      width: 100vw;
+      height: 926px;
+      margin: 0;
+      background-color: #f6f7f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    #remember-checkbox-container {
+      margin-bottom: 33px;
+    }
+  }
+  
+  @media screen and (max-width: 428px) {
+  
+      .input-icon {
+          position: absolute;
+          left: 355px;
+          height: 20px;
+          margin-top: -10px;
+          margin-left: -109px;
+      }
+  
+      .input-with-icon {
+          position: relative;
+          display: flex;
+          align-items: center;
+          width: 271px;
+          margin-left: -143%;
+      }
+  
+      #remember-checkbox-container {
+          display: flex;
+          flex-direction: row;
+          margin-left: -98px;
+      }
+  
+      #login-container {
+          width: 300px;
+          height: 515px;
+          background-color: #ffffff;
+          box-sizing: border-box;
+          border-radius: 30px;
+          padding-left: 116px;
+          padding-right: 116px;
+          padding-top: 8px;
+          font-family: "Inter", sans-serif;
+          margin-top: -25px;
+      }
+  
+      #login-container h2 {
+          text-align: center;
+          font-size: 23px;
+          font-weight: 700;
+          margin-top: 44px;
+          margin-bottom: 19px;
+      }
+  
+      #register-container {
+          position: absolute;
+          top: 639px;
+          /* left: 44%; */
+          transform: translateX(-50%);
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          padding-top: 95px;
+          margin-right: -112px;
+          /* margin-left: auto; */
+          margin-left: 10px;
+      }
+  
+      .footer a {
+          margin: 0;
+          color: #a8a8a8;
+          font-family: "Inter", sans-serif;
+          font-size: 11px;
+          font-weight: 400;
+          text-decoration: none;
+      }
+  
+  
+  
+  }
+
+  @media screen and (max-width: 650px) {
+
+    #signup-container h2 {
+      text-align: center;
+      font-size: 34px;
+      font-weight: 700;
+      margin-bottom: 17px;
+  }
+
+  }
+
+  @media screen and (max-width: 780px) {
+    #signup-container {
+      opacity: 0;
+      width: 315px;
+      height: 630px;
+      background-color: #ffffff;
+      box-sizing: border-box;
+      border-radius: 30px;
+      padding: 28px 116px 50px;
+      font-family: "Inter", sans-serif;
+    }
+
+    #signup-container {
+      opacity: 0;
+      width: 315px;
+      height: 630px;
+      background-color: #ffffff;
+      box-sizing: border-box;
+      border-radius: 30px;
+      padding: 26px 4px 50px;
+      font-family: "Inter", sans-serif;
+    }
+
+    #checkbox-label {
+      display: flex;
+      gap: 10px;
+      margin-left: 30px;
+    }
+
+    .form-group input {
+      width: 90%;
+      padding: 10px;
+      padding-left: 15px;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+    }
+
+    
+
+
+
+  }
+
+
+
+  

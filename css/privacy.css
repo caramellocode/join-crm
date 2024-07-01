@@ -1,0 +1,142 @@
+.pcontent-container {
+  position: relative;
+  top: 160px;
+  left: 0;
+  right: 0;
+  /* width: calc(100% - 30px); */
+  padding: 0 15px;
+  height: 90vh;
+  /* overflow: auto; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 35px;
+  padding-left: 222px;
+  /* overflow-y: hidden; */
+}
+
+.p-content {
+  background-color: #f6f7f8;
+  width: 74%;
+  color: black;
+  font-family: "Inter", sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-left: -146px;
+  margin-right: 20px;
+  margin-top: 25px;
+}
+
+h1 {
+  font-size: 27px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  margin-top: 50px;
+}
+
+p {
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+.title {
+  font-size: 47px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+.redirect-icon {
+  position: absolute;
+  right: 57px;
+  top: 125px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+}
+
+.title {
+  position: absolute;
+  font-size: 47px;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  margin-top: -35px;
+  color: black;
+}
+
+#header-icons img {
+  cursor: pointer;
+  display: none;
+}
+
+@media screen and (max-width: 1050px) {
+  .pcontent-container {
+    position: relative;
+    top: 160px;
+    left: 0;
+    right: 0;
+    /* width: calc(100% - 30px); */
+    /* padding: 0 15px; */
+    height: 90vh;
+    overflow: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 35px;
+    padding-left: 222px;
+    /* overflow-y: hidden; */
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .redirect-icon {
+    right: 10px; /* Position 10px vom rechten Rand für Bildschirme 1050px oder kleiner */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    position: absolute;
+    font-size: 31px;
+    font-weight: 700;
+    font-family: "Inter", sans-serif;
+    margin-top: -35px;
+    color: black;
+  }
+  .p-content {
+    background-color: #f6f7f8;
+    width: 320px;
+    color: black;
+    font-family: "Inter", sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: -139px;
+    margin-right: 20px;
+    margin-top: 25px;
+  }
+  .pcontent-container {
+    position: relative;
+    top: 160px;
+    /* left: 0; */
+    /* right: 0; */
+    /* width: calc(100% - 30px); */
+    /* padding: 0 15px; */
+    height: 100vh;
+    overflow: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 35px;
+    padding-left: 178px;
+    /* overflow-y: hidden; */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    margin-top: 50px;
+  }
+}
